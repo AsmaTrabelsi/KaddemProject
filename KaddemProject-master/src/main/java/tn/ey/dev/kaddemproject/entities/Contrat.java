@@ -1,20 +1,29 @@
 package tn.ey.dev.kaddemproject.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import java.util.Date;
+import lombok.*;
+
+import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class Contrat {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Setter(AccessLevel.NONE) // n'est pas autorisé la modification sur l'id
     private int idContrat;
-    Date dateDebutContrat;
+    private LocalDate dateDebutContrat;
 
-    Date dateFinContrat;
-    // Specilaite specialite;
-    boolean archive;
-    int montantContrat;
+    private LocalDate dateFinContrat;
+    @Enumerated(EnumType.STRING)
+    private Specialite specialite;
+    private boolean archive;
+    private int montantContrat;
 
 
 

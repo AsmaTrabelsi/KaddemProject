@@ -1,6 +1,8 @@
 package tn.ey.dev.kaddemproject.entities;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 //@Table( name = "Etudiants")
@@ -8,9 +10,11 @@ import javax.persistence.Id;
 public class Etudiant {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private int idEtudaint;
 
     String prenomE;
     String nomE;
-    // Option option
+     Option option;
 }
