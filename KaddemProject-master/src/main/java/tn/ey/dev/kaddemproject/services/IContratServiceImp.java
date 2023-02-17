@@ -1,5 +1,6 @@
 package tn.ey.dev.kaddemproject.services;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tn.ey.dev.kaddemproject.entities.Contrat;
@@ -8,9 +9,9 @@ import tn.ey.dev.kaddemproject.repositories.ContratRepository;
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class IContratServiceImp implements IContratServices {
 
-    @Autowired
     private ContratRepository contratRepository;
     @Override
     public void ajouterContrat(Contrat c) {

@@ -1,5 +1,6 @@
 package tn.ey.dev.kaddemproject.services;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tn.ey.dev.kaddemproject.entities.Universite;
@@ -8,8 +9,8 @@ import tn.ey.dev.kaddemproject.repositories.UniversiteRepository;
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class IUniversiteServicesImp implements IUniversiteServices{
-    @Autowired
     private UniversiteRepository universiteRepository;
     @Override
     public void ajoutUniversite(Universite u) {

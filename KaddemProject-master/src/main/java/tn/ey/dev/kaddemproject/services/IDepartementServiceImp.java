@@ -1,5 +1,6 @@
 package tn.ey.dev.kaddemproject.services;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tn.ey.dev.kaddemproject.entities.Departement;
@@ -8,8 +9,8 @@ import tn.ey.dev.kaddemproject.repositories.DepartementRepository;
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class IDepartementServiceImp implements IDepartementServices{
-    @Autowired
     private DepartementRepository departementRepository;
     @Override
     public void ajouterDepartement(Departement d) {

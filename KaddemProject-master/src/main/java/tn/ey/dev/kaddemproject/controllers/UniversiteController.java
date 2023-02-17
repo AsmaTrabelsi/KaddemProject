@@ -1,5 +1,6 @@
 package tn.ey.dev.kaddemproject.controllers;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import tn.ey.dev.kaddemproject.entities.Universite;
@@ -8,9 +9,10 @@ import tn.ey.dev.kaddemproject.services.IUniversiteServices;
 import java.util.List;
 
 @RestController
+@RequestMapping("universite")
+@RequiredArgsConstructor
 public class UniversiteController {
-    @Autowired
-    private IUniversiteServices iUniversiteServices;
+    private final IUniversiteServices iUniversiteServices;
 
     @GetMapping("/getAllUniversite")
     public List<Universite> getAllUniversite(){
