@@ -10,4 +10,7 @@ public interface IEtudiantServices {
     List<Etudiant> getAllEtudiant();
     Etudiant getByIdEtudiant(Integer id);
     void deleteEtudiant(Integer id);
+
+    public void assignEtudiantToDepartement (Integer etudiantId, Integer
+            departementId) ;
 }

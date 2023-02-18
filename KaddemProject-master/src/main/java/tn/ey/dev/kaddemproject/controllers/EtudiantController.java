@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import tn.ey.dev.kaddemproject.entities.Etudiant;
+import tn.ey.dev.kaddemproject.services.IEtudiantServiceImp;
 import tn.ey.dev.kaddemproject.services.IEtudiantServices;
 
 import java.util.List;
@@ -14,10 +15,10 @@ import java.util.List;
 public class EtudiantController {
 
     IEtudiantServices iEtudiantServices;
-   /* @GetMapping()
+    @GetMapping("sayhello")
     public String sayHello(){
         return "hello";
-    }*/
+    }
     @GetMapping()
     public List<Etudiant> getAll(){
         return iEtudiantServices.getAllEtudiant();
@@ -29,6 +30,11 @@ public class EtudiantController {
     @PostMapping()
     public void ajouterEtudiant(@RequestBody Etudiant e){
         iEtudiantServices.ajouterEtudiant(e);
+    }
+
+    @PutMapping("{etudiantId}/{departementId}")
+    public void assignEtudiantToDepartement(Integer etudiantId, Integer departementId) {
+        iEtudiantServices.assignEtudiantToDepartement(etudiantId,departementId);
     }
 
 }

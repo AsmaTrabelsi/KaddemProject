@@ -10,4 +10,6 @@ public interface IUniversiteServices {
     List<Universite> getAllUniversite();
     Universite getByIdUniversite(Integer id);
     void deleteUniversite(Integer id);
+    public void assignUniversiteToDepartement(Integer idUniversite, Integer
+            idDepartement);
 }
