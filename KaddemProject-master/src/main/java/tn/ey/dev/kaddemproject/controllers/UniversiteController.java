@@ -37,7 +37,7 @@ public class UniversiteController {
     }
 
     @PutMapping("{idUniversite}/{idDepartement}")
-    public void assignUniversiteToDepartement(Integer idUniversite, Integer idDepartement) {
+    public void assignUniversiteToDepartement(@PathVariable Integer idUniversite, @PathVariable Integer idDepartement) {
         iUniversiteServices.assignUniversiteToDepartement(idUniversite,idDepartement);
     }
 }
