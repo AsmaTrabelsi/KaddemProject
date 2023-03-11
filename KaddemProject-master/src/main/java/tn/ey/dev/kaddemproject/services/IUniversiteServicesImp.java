@@ -56,7 +56,7 @@ public class IUniversiteServicesImp implements IUniversiteServices{
             // affection d'universite dans le departement
             universite.getDepartement().add(departement);
 
-            universiteRepository.save(universite);
+            universiteRepository.save(universite); // ou ajouter @Transactional
 
     }
 }

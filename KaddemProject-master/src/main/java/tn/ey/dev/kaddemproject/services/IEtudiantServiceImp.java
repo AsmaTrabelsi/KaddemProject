@@ -1,7 +1,6 @@
 package tn.ey.dev.kaddemproject.services;
 
-import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.*;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 import tn.ey.dev.kaddemproject.entities.Contrat;
@@ -13,7 +12,7 @@ import tn.ey.dev.kaddemproject.repositories.DepartementRepository;
 import tn.ey.dev.kaddemproject.repositories.EquipeRepository;
 import tn.ey.dev.kaddemproject.repositories.EtudiantRepository;
 
-import java.util.ArrayList;
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
@@ -73,6 +72,7 @@ public class IEtudiantServiceImp implements IEtudiantServices{
     }
 
     @Override
+    @Transactional
     public Etudiant addAndAssignEtudiantToEquipeAndContract(Etudiant e, Integer idContrat, Integer idEquipe) {
         // managed entites
         Contrat contrat = contratRepository.findById(idContrat).orElse(null);
@@ -86,8 +86,8 @@ public class IEtudiantServiceImp implements IEtudiantServices{
         //e.setEquipes(equipes);
         equipe.getEtudiants().add(e);
        equipeRepository.saveAndFlush(equipe);
-
-        contratRepository.save(contrat);
+        // ki nsta3mlou Transactional  man3mlou .save()
+      //  contratRepository.save(contrat);
 
 
         return e;

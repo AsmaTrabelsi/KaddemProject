@@ -15,4 +15,5 @@ public interface IEtudiantServices {
             departementId) ;
     Etudiant addAndAssignEtudiantToEquipeAndContract(Etudiant e, Integer idContrat,
                                                      Integer idEquipe);
+
 }

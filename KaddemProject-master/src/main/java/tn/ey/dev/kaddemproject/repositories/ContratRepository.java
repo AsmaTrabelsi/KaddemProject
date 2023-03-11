@@ -3,5 +3,9 @@ package tn.ey.dev.kaddemproject.repositories;
 import org.springframework.data.jpa.repository.JpaRepository;
 import tn.ey.dev.kaddemproject.entities.Contrat;
 
+import java.util.List;
+
 public interface ContratRepository extends JpaRepository<Contrat, Integer> {
+
+    List<Contrat> findByArchive(Boolean archive);
 }

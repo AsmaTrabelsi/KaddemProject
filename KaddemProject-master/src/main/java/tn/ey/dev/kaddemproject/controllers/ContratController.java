@@ -36,4 +36,10 @@ public class ContratController {
         return contrat;
     }
 
+    @GetMapping("/{ce}/{nomE}/{prenomE}")
+    public Contrat affectContartToEtudiant(@PathVariable Contrat ce, @PathVariable String nomE, @PathVariable String prenomE){
+        iContratServices.affecteContratToEtudiant(ce,nomE, prenomE);
+        return ce;
+    }
+
 }
